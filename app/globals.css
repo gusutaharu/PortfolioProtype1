@@ -5,6 +5,12 @@
   --text-main: #01579b;
 }
 
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
 .canvas-container {
   position: fixed;
   top: 0;
