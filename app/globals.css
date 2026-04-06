@@ -5,10 +5,18 @@
   --text-main: #01579b;
 }
 
-body,
-html {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-main);
+  font-family:
+    'Inter',
+    -apple-system,
+    sans-serif;
 }
 
 .canvas-container {
@@ -19,4 +27,40 @@ html {
   height: 100vh;
   z-index: -1;
   pointer-events: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.5s ease;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  gap: 40px;
+}
+
+.nav-links li {
+  font-size: 0.9rem;
+}
+
+main {
+  margin-top: 80px;
 }
