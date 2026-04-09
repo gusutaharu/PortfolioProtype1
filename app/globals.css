@@ -19,6 +19,11 @@ body {
     sans-serif;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .canvas-container {
   position: fixed;
   top: 0;
@@ -28,6 +33,8 @@ body {
   z-index: -1;
   pointer-events: none;
 }
+
+/* header */
 
 header {
   position: fixed;
@@ -107,6 +114,44 @@ header {
   padding: 8px 0;
 }
 
+/* sections */
+
+section {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 5% 0;
+}
+
+.top-message {
+  font-size: 8vw;
+  font-weight: bold;
+}
+
+.hero-sub {
+  display: flex;
+}
+
+.hero-sub p {
+  font-size: 1.5rem;
+  line-height: 40px;
+}
+
+.hero-links {
+  display: flex;
+  gap: 10px;
+}
+
+.link-icon {
+  transition-duration: 300ms;
+}
+
+.link-icon:hover {
+  opacity: 0.4;
+}
+/* media queries */
+
 @media (max-width: 768px) {
   .nav-desktop {
     display: none;
@@ -120,8 +165,4 @@ header {
   .hamburger-btn {
     display: none;
   }
-}
-
-main {
-  margin-top: 80px;
 }
