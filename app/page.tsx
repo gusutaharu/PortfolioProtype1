@@ -1,7 +1,9 @@
+import { Hero } from '@/components/sections/hero';
+
 export default function Home() {
   return (
     <main>
-      <h1>Welcome to My Portfolio</h1>
+      <Hero />
     </main>
   );
 }
