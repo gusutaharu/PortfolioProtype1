@@ -1,3 +1,7 @@
+import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
+import { SiQiita } from 'react-icons/si';
+
 export const Hero = () => {
   return (
     <section>
@@ -11,12 +15,16 @@ export const Hero = () => {
       <div className="hero-sub">
         <p>今、選ばれるものをつくる。</p>
         <div className="hero-links">
-          <svg viewBox="0 0 100 100" width="100" height="100">
-            <circle cx="50" cy="50" r="30" fill="gray" />
-          </svg>
-          <svg viewBox="0 0 100 100" width="100" height="100">
-            <circle cx="30" cy="50" r="30" fill="gray" />
-          </svg>
+          <Link
+            href="https://github.com/gusutaharu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub size={40} className="link-icon" />
+          </Link>
+          <Link href={'/'} target="_blank" rel="noopener noreferrer">
+            <SiQiita size={40} className="link-icon" />
+          </Link>
         </div>
       </div>
     </section>
