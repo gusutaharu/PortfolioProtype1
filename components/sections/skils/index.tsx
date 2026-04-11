@@ -1,4 +1,8 @@
-export const Skils = () => {
+import { SkillChart } from './skill-chart';
+import { SkillCounter } from './skill-counter';
+
+export const Skills = () => {
+  const value = 0.5;
   const numberOfCircles = [1, 2, 3, 4, 5];
   return (
     <section className="skils-section">
@@ -8,9 +12,8 @@ export const Skils = () => {
         <div className="charts-area">
           {numberOfCircles.map((i) => (
             <div key={i} className="chart-item">
-              <svg viewBox="0 0 126 126" className="chart-svg">
-                <circle cx="60" cy="60" r="60" strokeWidth="3" fill="gray" />
-              </svg>
+              <SkillChart value={value} />
+              <SkillCounter value={value} />
             </div>
           ))}
         </div>

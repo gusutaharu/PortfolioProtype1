@@ -1,11 +1,11 @@
 import { Hero } from '@/components/sections/hero';
-import { Skils } from '@/components/sections/skils';
+import { Skills } from '@/components/sections/skils';
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Skils />
+      <Skills />
     </main>
   );
 }
