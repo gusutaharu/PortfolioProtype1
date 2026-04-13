@@ -4,7 +4,7 @@ import { SiQiita } from 'react-icons/si';
 
 export const Hero = () => {
   return (
-    <section>
+    <section className="hero-section">
       <div>
         <h1 className="top-message">
           gusutaharu&apos;s

@@ -1,0 +1,22 @@
+import { GitHubData } from './github-data';
+
+export const Skills = () => {
+  return (
+    <section className="skils-section">
+      <h2 className="section-title">Skills</h2>
+      <div className="github-data">
+        <h3 className="skil-title">GitHub Data</h3>
+        <div className="charts-area">
+          <GitHubData />
+        </div>
+        <p className="charts-description">
+          ※自身のGithubアカウントのオープンリポジトリの使用言語率を元に算出。
+        </p>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+  );
+};
