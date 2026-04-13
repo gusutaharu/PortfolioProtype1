@@ -3,12 +3,18 @@ export async function getGitHubProfile() {
     query {
       viewer {
         login
-        name
-        avatarUrl
-        repositories(first: 5, orderBy: {field: CREATED_AT, direction: DESC}) {
+        repositories(first: 50, orderBy: {field: CREATED_AT, direction: DESC}) {
           nodes {
             name
-            url
+            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+              totalSize
+              edges {
+                size
+                node {
+                  name
+                }
+              }
+            }
           }
         }
       }
@@ -30,5 +36,5 @@ export async function getGitHubProfile() {
   }
 
   const result = await res.json();
-  return result.data.viewer;
+  return result.data.viewer.repositories.nodes;
 }
