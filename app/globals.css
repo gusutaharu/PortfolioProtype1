@@ -168,8 +168,12 @@ section {
 }
 
 .skil-title {
+  display: flex;
   font-size: 1.5rem;
   margin: 60px 0;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .charts-area {
@@ -205,6 +209,29 @@ section {
   text-align: center;
 }
 
+.other-skills {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 32px;
+}
+
+.other-skills .skil-title::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: #01579b;
+  margin-left: 1rem;
+}
+
+.tech-stack {
+  flex: 1;
+}
+
+.qualifications {
+  flex: 1;
+}
+
 /* media queries */
 
 @media (max-width: 768px) {
@@ -219,6 +246,9 @@ section {
   }
   .charts-description {
     text-align: left;
+  }
+  .other-skills {
+    flex-direction: column;
   }
 }
 

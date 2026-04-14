@@ -13,9 +13,13 @@ export const Skills = () => {
           ※自身のGithubアカウントのオープンリポジトリの使用言語率を元に算出。
         </p>
       </div>
-      <div>
-        <div></div>
-        <div></div>
+      <div className="other-skills">
+        <div className="tech-stack">
+          <h3 className="skil-title">技術スタック</h3>
+        </div>
+        <div className="qualifications">
+          <h3 className="skil-title">保有資格</h3>
+        </div>
       </div>
     </section>
   );
