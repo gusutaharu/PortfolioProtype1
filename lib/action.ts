@@ -2,6 +2,8 @@
 
 import { z } from 'zod';
 
+import { FormStateType } from './difinitions';
+
 const ContactSchema = z.object({
   name: z
     .string()
@@ -14,7 +16,10 @@ const ContactSchema = z.object({
     .max(500, { error: '内容は500文字以内に収めてください' }),
 });
 
-export const sendEmail = async (formData: FormData) => {
+export const sendEmail = async (
+  prevState: FormStateType,
+  formData: FormData,
+) => {
   const validatedFields = ContactSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
@@ -24,11 +29,16 @@ export const sendEmail = async (formData: FormData) => {
     return {
       success: false,
       errors: validatedFields.error.flatten().fieldErrors,
+      message: '問い合わせに失敗しました。',
     };
   }
   const { name, email, content } = validatedFields.data;
   try {
     console.log(`${name},${email},${content}`);
+    return {
+      success: true,
+      message: 'お問い合わせありがとうございます。',
+    };
   } catch (error) {
     return {
       success: false,
