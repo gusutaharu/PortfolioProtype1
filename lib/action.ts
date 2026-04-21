@@ -1,5 +1,6 @@
 'use server';
 
+import { Resend } from 'resend';
 import { z } from 'zod';
 
 import { FormStateType } from './difinitions';
@@ -15,6 +16,8 @@ const ContactSchema = z.object({
     .min(5, { error: '内容は５文字以上入力してください' })
     .max(500, { error: '内容は500文字以内に収めてください' }),
 });
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (
   prevState: FormStateType,
@@ -34,11 +37,13 @@ export const sendEmail = async (
   }
   const { name, email, content } = validatedFields.data;
   try {
-    console.log(`${name},${email},${content}`);
-    return {
-      success: true,
-      message: 'お問い合わせありがとうございます。',
-    };
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: 'j.gusutahu.arufonnsu@gmail.com',
+      subject: `【ポートフォリオ】${name}様より`,
+      html: `<p>名前: ${name}</p><p>メール: ${email}</p><p>内容: ${content}</p>`,
+    });
+    return { success: true, message: '送信完了しました！' };
   } catch (error) {
     return {
       success: false,
