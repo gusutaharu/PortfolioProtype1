@@ -15,6 +15,7 @@ const ContactSchema = z.object({
     .string()
     .min(5, { error: '内容は５文字以上入力してください' })
     .max(500, { error: '内容は500文字以内に収めてください' }),
+  'cf-turnstile-response': z.string().min(1, 'セキュリティ検証が必要です'),
 });
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -23,11 +24,9 @@ export const sendEmail = async (
   prevState: FormStateType,
   formData: FormData,
 ) => {
-  const validatedFields = ContactSchema.safeParse({
-    name: formData.get('name'),
-    email: formData.get('email'),
-    content: formData.get('content'),
-  });
+  const validatedFields = ContactSchema.safeParse(
+    Object.fromEntries(formData.entries()),
+  );
   if (!validatedFields.success) {
     return {
       success: false,
@@ -35,7 +34,25 @@ export const sendEmail = async (
       message: '問い合わせに失敗しました。',
     };
   }
-  const { name, email, content } = validatedFields.data;
+  const {
+    name,
+    email,
+    content,
+    'cf-turnstile-response': token,
+  } = validatedFields.data;
+  const verifyRes = await fetch(
+    'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${process.env.TURNSTILE_SECRET_KEY}&response=${token}`,
+    },
+  );
+
+  const outcome = await verifyRes.json();
+  if (!outcome.success) {
+    return { success: false, message: '認証に失敗しました' };
+  }
   try {
     await resend.emails.send({
       from: 'onboarding@resend.dev',

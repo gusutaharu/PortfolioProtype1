@@ -1,5 +1,6 @@
 'use client';
 
+import { Turnstile } from '@marsidev/react-turnstile';
 import { useActionState } from 'react';
 
 import { sendEmail } from '@/lib/action';
@@ -49,6 +50,12 @@ export const Contact = () => {
             placeholder="message"
             disabled={isPending}
           ></textarea>
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            options={{
+              theme: 'light',
+            }}
+          />
           <button type="submit" className="submit-btn" disabled={isPending}>
             {isPending ? '送信中...' : '送信'}
           </button>
