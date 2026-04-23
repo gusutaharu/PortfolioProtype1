@@ -11,6 +11,19 @@ export interface Repository {
   name: string;
   languages: {
     totalSize: number;
-    edges: LanguageEdge[]; // nodesではなくedgesの中にsizeとnodeがある
+    edges: LanguageEdge[];
+  };
+}
+
+//フォーム操作
+
+export interface FormStateType {
+  success: boolean;
+  message: string;
+  errors?: Record<string, string[]>;
+  fields?: {
+    name?: string;
+    email?: string;
+    content?: string;
   };
 }

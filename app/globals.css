@@ -298,6 +298,45 @@ section {
   font-size: 0.8rem;
 }
 
+/* contact sections */
+
+.contact-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+input {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+textarea {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  height: 10rem;
+}
+
+.submit-btn {
+  align-self: right;
+  background: var(--text-main);
+  color: white;
+  padding: 0.5rem;
+}
+
 /* media queries */
 
 @media (max-width: 768px) {
