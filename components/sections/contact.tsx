@@ -31,6 +31,7 @@ export const Contact = () => {
             type="text"
             name="name"
             placeholder="name"
+            defaultValue={state.fields?.name}
             disabled={isPending}
           />
           {state.errors?.email && (
@@ -40,6 +41,7 @@ export const Contact = () => {
             type="email"
             name="email"
             placeholder="email"
+            defaultValue={state.fields?.email}
             disabled={isPending}
           />
           {state.errors?.content && (
@@ -48,6 +50,7 @@ export const Contact = () => {
           <textarea
             name="content"
             placeholder="message"
+            defaultValue={state.fields?.content}
             disabled={isPending}
           ></textarea>
           <Turnstile

@@ -24,14 +24,21 @@ export const sendEmail = async (
   prevState: FormStateType,
   formData: FormData,
 ) => {
-  const validatedFields = ContactSchema.safeParse(
-    Object.fromEntries(formData.entries()),
-  );
+  const fields = {
+    name: formData.get('name') as string,
+    email: formData.get('email') as string,
+    content: formData.get('content') as string,
+  };
+  const validatedFields = ContactSchema.safeParse({
+    ...fields,
+    'cf-turnstile-response': formData.get('cf-turnstile-response'),
+  });
   if (!validatedFields.success) {
     return {
       success: false,
       errors: validatedFields.error.flatten().fieldErrors,
       message: '問い合わせに失敗しました。',
+      fields: fields,
     };
   }
   const {
@@ -51,7 +58,7 @@ export const sendEmail = async (
 
   const outcome = await verifyRes.json();
   if (!outcome.success) {
-    return { success: false, message: '認証に失敗しました' };
+    return { success: false, message: '認証に失敗しました', fields: fields };
   }
   try {
     await resend.emails.send({
@@ -62,9 +69,11 @@ export const sendEmail = async (
     });
     return { success: true, message: '送信完了しました！' };
   } catch (error) {
+    console.log('メール送信エラー:', error);
     return {
       success: false,
       message: '送信に失敗しました。時間をおいて再度お試しください。',
+      fields: fields,
     };
   }
 };
