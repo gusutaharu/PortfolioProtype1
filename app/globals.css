@@ -337,6 +337,15 @@ textarea {
   padding: 0.5rem;
 }
 
+/* footer */
+
+footer {
+  background: oklch(23.301% 0.04108 264.979);
+  color: white;
+  padding: 100px 10%;
+  margin-top: 100px;
+}
+
 /* media queries */
 
 @media (max-width: 768px) {
