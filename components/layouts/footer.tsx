@@ -13,23 +13,26 @@ export const Footer = () => {
   return (
     <footer>
       <div className="flex justify-between">
-        <div>
-          <Link href="/">gusutaharu</Link>
-          <div className="flex">
-            <Link
-              href="https://github.com/gusutaharu"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub size={40} className="link-icon" />
-            </Link>
-            <Link href={'/'} target="_blank" rel="noopener noreferrer">
-              <SiQiita size={40} className="link-icon" />
-            </Link>
+        <div className="flex flex-col justify-center gap-4">
+          <div className="flex items-center justify-center gap-4">
+            <Link href="/">gusutaharu</Link>
+            <div className="flex gap-2">
+              <Link
+                href="https://github.com/gusutaharu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={40} className="link-icon" />
+              </Link>
+              <Link href={'/'} target="_blank" rel="noopener noreferrer">
+                <SiQiita size={40} className="link-icon" />
+              </Link>
+            </div>
           </div>
+          <p>sample@sample.email</p>
         </div>
-        <div>
-          <ul>
+        <div className="flex items-center justify-center">
+          <ul className="flex justify-center gap-6">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link href={item.href}>{item.name}</Link>
@@ -38,9 +41,10 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
-      <div>
+      <div className="text-center">
         <span>
-          &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
+          &copy; {new Date().getFullYear()} gusutaharu&apos;s portfolio. All
+          rights reserved.
         </span>
       </div>
     </footer>

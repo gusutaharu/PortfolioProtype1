@@ -342,8 +342,11 @@ textarea {
 footer {
   background: oklch(23.301% 0.04108 264.979);
   color: white;
-  padding: 100px 10%;
+  padding: 50px 10% 5%;
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* media queries */
