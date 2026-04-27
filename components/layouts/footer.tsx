@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa';
-import { SiQiita } from 'react-icons/si';
+
+import { GithubIcon } from '../ui/githubicon';
+import { QiitaIcon } from '../ui/qitaicon';
 
 const navItems = [
   { name: 'TOP', href: '/' },
@@ -17,16 +18,8 @@ export const Footer = () => {
           <div className="flex items-center justify-center gap-4">
             <Link href="/">gusutaharu</Link>
             <div className="flex gap-2">
-              <Link
-                href="https://github.com/gusutaharu"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub size={40} className="link-icon" />
-              </Link>
-              <Link href={'/'} target="_blank" rel="noopener noreferrer">
-                <SiQiita size={40} className="link-icon" />
-              </Link>
+              <GithubIcon />
+              <QiitaIcon />
             </div>
           </div>
           <p>sample@sample.email</p>
