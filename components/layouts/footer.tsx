@@ -13,19 +13,16 @@ const navItems = [
 export const Footer = () => {
   return (
     <footer>
-      <div className="flex justify-between">
-        <div className="flex flex-col justify-center gap-4">
-          <div className="flex items-center justify-center gap-4">
-            <Link href="/">gusutaharu</Link>
-            <div className="flex gap-2">
-              <GithubIcon />
-              <QiitaIcon />
-            </div>
+      <div className="footer-content">
+        <div className="footer-content-left">
+          <Link href="/">gusutaharu</Link>
+          <div className="icon-area">
+            <GithubIcon />
+            <QiitaIcon />
           </div>
-          <p>sample@sample.email</p>
         </div>
-        <div className="flex items-center justify-center">
-          <ul className="flex justify-center gap-6">
+        <div className="footer-content-right">
+          <ul className="footer-nav">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link href={item.href}>{item.name}</Link>
@@ -34,7 +31,7 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="text-center">
+      <div className="copyright">
         <span>
           &copy; {new Date().getFullYear()} gusutaharu&apos;s portfolio. All
           rights reserved.
