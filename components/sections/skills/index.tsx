@@ -4,7 +4,7 @@ import { GitHubData } from './github-data';
 
 export const Skills = () => {
   return (
-    <section className="skils-section">
+    <section id="skils-section">
       <h2 className="section-title">Skills</h2>
       <div className="github-data">
         <h3 className="skil-title">GitHub Data</h3>

@@ -4,10 +4,10 @@ import { GithubIcon } from '../ui/githubicon';
 import { QiitaIcon } from '../ui/qitaicon';
 
 const navItems = [
-  { name: 'TOP', href: '/' },
-  { name: 'Skils', href: '/' },
-  { name: 'Projects', href: '/' },
-  { name: 'Contact', href: '/' },
+  { name: 'TOP', href: '#hero-section' },
+  { name: 'Skils', href: '#skils-section' },
+  { name: 'Projects', href: '#projects-section' },
+  { name: 'Contact', href: '#contact-section' },
 ];
 
 export const Footer = () => {

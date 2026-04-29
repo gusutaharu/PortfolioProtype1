@@ -131,7 +131,7 @@ section {
 
 /* hero-section */
 
-.hero-section {
+#hero-section {
   justify-content: center;
 }
 
@@ -164,7 +164,7 @@ section {
 
 /* skils-section */
 
-.skils-section {
+#skils-section {
   justify-content: start;
   padding-bottom: 120px;
 }
@@ -266,6 +266,11 @@ section {
 }
 
 /* projects sections */
+
+#projects-section {
+  justify-content: start;
+  padding-bottom: 120px;
+}
 
 .projects-list {
   display: flex;

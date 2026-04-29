@@ -17,7 +17,7 @@ export const Contact = () => {
     initialState,
   );
   return (
-    <section>
+    <section id="contact-section">
       <h2 className="section-title">Contact</h2>
       {state.message && (
         <p className="mb-3 font-semibold text-red-500">{state.message}</p>

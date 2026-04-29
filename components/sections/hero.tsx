@@ -3,7 +3,7 @@ import { QiitaIcon } from '../ui/qitaicon';
 
 export const Hero = () => {
   return (
-    <section className="hero-section">
+    <section id="hero-section">
       <div>
         <h1 className="top-message">
           gusutaharu&apos;s
