@@ -1,14 +1,9 @@
 import Link from 'next/link';
 
+import { NAV_ITEMS } from '@/constants/navigation';
+
 import { GithubIcon } from '../ui/githubicon';
 import { QiitaIcon } from '../ui/qitaicon';
-
-const navItems = [
-  { name: 'TOP', href: '#hero-section' },
-  { name: 'Skils', href: '#skils-section' },
-  { name: 'Projects', href: '#projects-section' },
-  { name: 'Contact', href: '#contact-section' },
-];
 
 export const Footer = () => {
   return (
@@ -23,7 +18,7 @@ export const Footer = () => {
         </div>
         <div className="footer-content-right">
           <ul className="footer-nav">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <li key={item.name}>
                 <Link href={item.href}>{item.name}</Link>
               </li>
