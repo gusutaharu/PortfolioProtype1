@@ -16,7 +16,7 @@ export const Footer = () => {
             <QiitaIcon />
           </div>
         </div>
-        <div className="footer-content-right">
+        <nav className="footer-content-right">
           <ul className="footer-nav">
             {NAV_ITEMS.map((item) => (
               <li key={item.name}>
@@ -24,7 +24,7 @@ export const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
       </div>
       <div className="copyright">
         <span>

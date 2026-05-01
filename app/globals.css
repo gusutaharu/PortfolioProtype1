@@ -74,6 +74,11 @@ header {
   font-size: 0.9rem;
 }
 
+nav li:hover {
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
 .hamburger-btn {
   display: flex;
   flex-direction: column;
