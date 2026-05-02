@@ -28,8 +28,8 @@ export const Footer = () => {
       </div>
       <div className="copyright">
         <span>
-          &copy; {new Date().getFullYear()} gusutaharu&apos;s portfolio. All
-          rights reserved.
+          &copy; {new Date().getFullYear()} &nbsp;gusutaharu&apos;s portfolio.
+          All rights reserved.
         </span>
       </div>
     </footer>
