@@ -4,12 +4,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const navItems = [
-  { name: 'TOP', href: '/' },
-  { name: 'Skils', href: '/' },
-  { name: 'Projects', href: '/' },
-  { name: 'Contact', href: '/' },
-];
+import { NAV_ITEMS } from '@/constants/navigation';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +31,7 @@ export const Header = () => {
         </Link>
         <nav className="nav-desktop">
           <ul className="nav-links">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <li key={item.name}>
                 <Link href={item.href}>{item.name}</Link>
               </li>
@@ -74,7 +69,7 @@ export const Header = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             <ul>
-              {navItems.map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} onClick={() => setIsOpen(false)}>
                     {item.name}

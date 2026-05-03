@@ -4,7 +4,7 @@ import { PROJECTS } from '@/constants/projects';
 
 export const Projects = () => {
   return (
-    <section>
+    <section id="projects-section">
       <h2 className="section-title">Projects</h2>
       <div>
         <ul className="projects-list">

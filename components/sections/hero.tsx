@@ -1,10 +1,9 @@
-import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa';
-import { SiQiita } from 'react-icons/si';
+import { GithubIcon } from '../ui/githubicon';
+import { QiitaIcon } from '../ui/qitaicon';
 
 export const Hero = () => {
   return (
-    <section className="hero-section">
+    <section id="hero-section">
       <div>
         <h1 className="top-message">
           gusutaharu&apos;s
@@ -15,16 +14,8 @@ export const Hero = () => {
       <div className="hero-sub">
         <p>今、選ばれるものをつくる。</p>
         <div className="hero-links">
-          <Link
-            href="https://github.com/gusutaharu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub size={40} className="link-icon" />
-          </Link>
-          <Link href={'/'} target="_blank" rel="noopener noreferrer">
-            <SiQiita size={40} className="link-icon" />
-          </Link>
+          <GithubIcon />
+          <QiitaIcon />
         </div>
       </div>
     </section>
