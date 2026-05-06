@@ -1,10 +1,11 @@
 import { QUALIFICATIONS, TECH_STACK } from '@/constants/skills';
 
 import { GitHubData } from './github-data';
+import { SkillsWrapper } from './SkillsWrapper';
 
 export const Skills = () => {
   return (
-    <section id="skils-section">
+    <SkillsWrapper>
       <h2 className="section-title">Skills</h2>
       <div className="github-data">
         <h3 className="skil-title">GitHub Data</h3>
@@ -38,6 +39,6 @@ export const Skills = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </SkillsWrapper>
   );
 };
