@@ -9,7 +9,7 @@ export const SkillChart = ({ value }: { value: number }) => {
         cy="60"
         r="50"
         strokeWidth="1"
-        stroke="rgba(255, 255, 255, 0.5)"
+        stroke="rgba(0, 0, 0, 0.1)"
         fill="none"
       />
       <motion.circle
@@ -22,7 +22,6 @@ export const SkillChart = ({ value }: { value: number }) => {
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: value }}
         transition={{ duration: 2, ease: 'easeInOut' }}
-        viewport={{ once: true }}
       />
     </svg>
   );

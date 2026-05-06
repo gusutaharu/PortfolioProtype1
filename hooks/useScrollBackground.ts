@@ -8,20 +8,21 @@ gsap.registerPlugin(ScrollTrigger);
 export const useScrollBackground = (
   targetRef: RefObject<HTMLElement | null>,
 ) => {
-  useGSAP(
-    () => {
-      gsap.to(targetRef.current, {
-        backgroundColor: 'white',
-        scrollTrigger: {
-          trigger: targetRef.current,
-          start: 'top center',
-          end: 'bottom center',
-          scrub: true,
-        },
-      });
-    },
-    { scope: targetRef },
-  );
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: targetRef.current,
+      start: 'top center',
+      end: 'bottom center',
+      onToggle: (self) => {
+        const isActive = self.isActive;
+        gsap.to('.white-overlay', {
+          opacity: isActive ? 0.8 : 0,
+          duration: 1,
+          overwrite: 'auto',
+        });
+      },
+    });
+  });
 
   return targetRef;
 };
