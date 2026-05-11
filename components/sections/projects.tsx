@@ -1,8 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 
 import { PROJECTS } from '@/constants/projects';
+import { useVideoZoom } from '@/hooks/useVideoZoom';
 
 export const Projects = () => {
+  useVideoZoom('.project-item', '.project-video');
+
   return (
     <section id="projects-section">
       <h2 className="section-title">Projects</h2>
@@ -19,9 +24,9 @@ export const Projects = () => {
                   ))}
                 </div>
               </div>
-              <div className="relative aspect-video">
+              <div className="video-wrapper">
                 <Image
-                  className="object-cover"
+                  className="project-video object-cover"
                   fill
                   src={project.video}
                   alt={project.name}
