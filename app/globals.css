@@ -291,7 +291,7 @@ section {
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 30rem;
+  gap: 50rem;
 }
 
 .project-item {
@@ -330,7 +330,7 @@ section {
 /* contact sections */
 
 #contact-section {
-  margin-top: 200px;
+  margin-top: 600px;
 }
 
 .contact-area {

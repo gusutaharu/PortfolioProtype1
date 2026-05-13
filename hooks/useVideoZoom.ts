@@ -25,7 +25,7 @@ export const useVideoZoom = (
         scrollTrigger: {
           trigger: container, // セクション全体をトリガーに
           start: 'top top', // コンテナの上が画面の一番上に重なったら開始
-          end: '+=150', // 1000px分スクロールする間、固定を維持（ここで長さを調節）
+          end: '+=500', // 1000px分スクロールする間、固定を維持（ここで長さを調節）
           scrub: true, // スクロールに同期
           pin: true, // ★重要：アニメーションが終わるまで固定する
           anticipatePin: 1, // ピン留め時のガタつきを防止
