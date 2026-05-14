@@ -74,7 +74,7 @@ export const FluidMesh = () => {
           void main() {
             vec2 uv = (vUv * 2.0 - 1.0) * uResolution.x / uResolution.y;
             vec2 p = uv * 1.3;
-            float t = uTime * 0.15;
+            float t = uTime * 0.5;
 
             // ゆがみ
             vec2 q = vec2(
