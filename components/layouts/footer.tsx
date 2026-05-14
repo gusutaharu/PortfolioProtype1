@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { NAV_ITEMS } from '@/constants/navigation';
 
 import { GithubIcon } from '../ui/githubicon';
-import { QiitaIcon } from '../ui/qitaicon';
+import { QiitaIcon } from '../ui/qiitaicon';
 
 export const Footer = () => {
   return (
