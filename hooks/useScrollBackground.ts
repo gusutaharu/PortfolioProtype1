@@ -16,7 +16,7 @@ export const useScrollBackground = (
       onToggle: (self) => {
         const isActive = self.isActive;
         gsap.to('.white-overlay', {
-          opacity: isActive ? 0.8 : 0,
+          opacity: isActive ? 1 : 0,
           duration: 1,
           overwrite: 'auto',
         });
