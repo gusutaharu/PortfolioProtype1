@@ -21,6 +21,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "gusutaharu's Portfolio",
   description: 'webエンジニアを目指しているgusutaharuのポートフォリオサイト',
+  openGraph: {
+    title: "gusutaharu's Portfolio",
+    description: 'webエンジニアを目指しているgusutaharuのポートフォリオサイト',
+    url: '/',
+  },
 };
 
 export default function RootLayout({
