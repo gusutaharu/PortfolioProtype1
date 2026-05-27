@@ -181,20 +181,13 @@ section {
   padding-bottom: 120px;
 }
 
-.skil-title {
+.skill-title {
   display: flex;
   font-size: 1.5rem;
   margin: 30px 0;
   align-items: center;
   width: 100%;
   white-space: nowrap;
-  &::after {
-    content: '';
-    flex-grow: 1;
-    height: 1px;
-    background: #01579b;
-    margin-left: 1rem;
-  }
 }
 
 .charts-area {
@@ -235,6 +228,15 @@ section {
   justify-content: space-between;
   margin: 60px 30px;
   gap: 20px;
+  .skill-title {
+    &::after {
+      content: '';
+      flex-grow: 1;
+      height: 1px;
+      background: #01579b;
+      margin-left: 1rem;
+    }
+  }
 }
 
 .tech-stack {
