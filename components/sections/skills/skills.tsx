@@ -8,7 +8,7 @@ export const Skills = () => {
     <SkillsWrapper>
       <h2 className="section-title">Skills</h2>
       <div className="github-data">
-        <h3 className="skil-title">GitHub Data</h3>
+        <h3 className="skill-title">GitHub Data</h3>
         <div className="charts-area">
           <GitHubData />
         </div>
@@ -18,7 +18,7 @@ export const Skills = () => {
       </div>
       <div className="other-skills">
         <div className="tech-stack">
-          <h3 className="skil-title">技術スタック</h3>
+          <h3 className="skill-title">技術スタック</h3>
           <ul className="skill-tags">
             {TECH_STACK.map((skill) => (
               <li className="skill-tag" key={skill}>
@@ -28,7 +28,7 @@ export const Skills = () => {
           </ul>
         </div>
         <div className="qualifications">
-          <h3 className="skil-title">保有資格</h3>
+          <h3 className="skill-title">保有資格</h3>
           <ul>
             {QUALIFICATIONS.map((item) => (
               <li className="qualifications-list" key={item.name}>

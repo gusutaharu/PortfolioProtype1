@@ -9,9 +9,7 @@ export async function GitHubData() {
 
   // 万が一データが取れなかった場合の安全な表示
   if (skills.length === 0) {
-    return (
-      <p className="text-gray-500">スキルデータを読み込めませんでした。</p>
-    );
+    return <p>スキルデータを読み込めませんでした。</p>;
   }
 
   return (
